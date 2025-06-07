@@ -18,7 +18,7 @@ markup:
 
 menu:
   main:
-    - name: Docs
+    - name: Documentation
       pageRef: /docs
       weight: 1
     - name: Search
@@ -32,7 +32,7 @@ menu:
         icon: github
 
 # Parse Git commit
-# enableGitInfo: true
+enableGitInfo: true
 
 params:
   navbar:
@@ -49,4 +49,4 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/tempo-lang/tempo/edit/main/content"
+    base: "https://github.com/tempo-lang/tempo-lang.github.io/edit/main/content"
