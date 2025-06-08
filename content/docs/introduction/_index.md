@@ -3,6 +3,7 @@ title: Introduction
 type: docs
 prev: docs/getting-started
 next: docs/introduction/choreographic-programming
+weight: 2
 sidebar:
   open: true
 ---

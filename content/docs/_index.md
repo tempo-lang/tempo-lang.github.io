@@ -12,3 +12,6 @@ next: docs/getting-started
 
 - [Language Guide](./language-guide)\
   Read about the concepts and features of the language.
+
+- [Projection](./projection)\
+  Understand how projections are executed, and how choreographies interact with the host language.

@@ -3,6 +3,7 @@ title: Getting Started
 type: docs
 prev: docs
 next: docs/introduction
+weight: 1
 ---
 
 Read how to get started with Tempo.
