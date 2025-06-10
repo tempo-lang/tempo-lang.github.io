@@ -50,7 +50,7 @@ A type with a local role, denoted `Type@A`, exists only at one role.
 
 ### Shared Roles
 
-A type with a shared role, denoted `Type@[A,B,C]`, describes a value that is guaranteed to be the same at all mentioned roles.
+A type with a shared role, denoted `Type@[A,B,C]`, describes a value that at runtime is guaranteed to be the same across all mentioned roles.
 
 A shared variable can be coerced to one of a subset of the roles, or even a single role.
 Constant literals are automatically shared between all roles and coerced to the subset needed.
