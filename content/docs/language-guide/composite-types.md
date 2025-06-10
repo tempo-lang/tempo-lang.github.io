@@ -25,3 +25,22 @@ Lists are written like this.
 ```tempo
 let x: [Int@[A,B]] = [1, 2, 3];
 ```
+
+You can combine lists using the `+` operator if they share the same underlying type and their roles intersect.
+
+```tempo
+let x: [Int@[A,B]] = [1,2,3];
+let y: [Int@[B,C]] = [4,5,6];
+
+// the combined list exists only at `B`
+let combined: [Int@B] = x + y;
+```
+
+Similarly, you can index lists if the roles of the index intersect with the underlying type of the list.
+
+```tempo
+let x: [String@[A,B]] = ["hello", "hi", "hey"];
+let i: Int@A = 1;
+
+let y: String@A = x[i]; // "hi"
+```
