@@ -1,8 +1,9 @@
 ---
 title: Transports
 type: docs
-prev: docs/projection/interact-with-host-language
-weight: 2
+prev: docs/projection
+next: docs/projection/interact-with-host-language
+weight: 1
 ---
 
 Processes use a transport implementation in order to communicate with the other processes.
