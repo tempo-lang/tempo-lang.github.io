@@ -2,7 +2,7 @@
 title: Functions
 type: docs
 prev: docs/language-guide/communication
-next: docs/language-guide/composite-types
+next: docs/language-guide/expressions
 weight: 4
 ---
 

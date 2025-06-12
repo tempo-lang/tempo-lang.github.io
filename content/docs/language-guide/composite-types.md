@@ -3,7 +3,7 @@ title: Composite Types
 type: docs
 prev: docs/language-guide/functions
 next: docs/language-guide/control-flow
-weight: 5
+weight: 6
 ---
 
 ## Structures

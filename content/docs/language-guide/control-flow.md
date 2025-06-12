@@ -3,7 +3,7 @@ title: Control Flow
 type: docs
 prev: docs/language-guide/composite-types
 next: docs/projection
-weight: 6
+weight: 7
 ---
 
 ## Conditionals
