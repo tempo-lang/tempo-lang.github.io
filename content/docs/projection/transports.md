@@ -9,7 +9,7 @@ weight: 1
 Processes use a transport implementation in order to communicate with the other processes.
 You can use any implementation of the `Transport` interface.
 
-```go
+```go {filename=Go}
 type Transport interface {
   Send(value any, roles ...string)
   Recv(role string, value any) *Async[any]
@@ -22,14 +22,14 @@ The Go implementation comes with a built-in local transportation implementation.
 
 Consider the following choreography.
 
-```tempo
+```tempo {filename=Tempo}
 func@(A,B) PingPong() {
   let ping = await A->B "ping";
   let pong = await B->A "pong";
 }
 ```
 
-```go
+```go {filename=Go}
 package main
 
 import (
@@ -55,7 +55,7 @@ func main() {
 You can use the `simulator` package to simplify testing choreographies locally.
 Using that, we can rewrite the example above like so.
 
-```go
+```go {filename=Go}
 package main
 
 import (

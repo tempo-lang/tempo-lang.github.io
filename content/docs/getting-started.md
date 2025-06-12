@@ -42,7 +42,7 @@ $ tempo build greeting.tempo
 
 You should obtain the following projected Go code.
 
-```go
+```go {filename=Go}
 // Projection of choreography greet
 func greet_Alice(env *runtime.Env) {
     runtime.Send(env, "Hello Bob, this is Alice", "Bob")

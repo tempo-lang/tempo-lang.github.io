@@ -6,7 +6,7 @@ This repository contains the website along with all documentation for Tempo.
 
 Pre-requisites: [Hugo](https://gohugo.io/getting-started/installing/), [Go](https://golang.org/doc/install) and [Git](https://git-scm.com)
 
-```shell
+```sh {filename=Terminal}
 # Clone the repo
 git clone https://github.com/tempo-lang/tempo-lang.github.io.git
 
@@ -20,7 +20,7 @@ hugo server
 
 ### Update theme
 
-```shell
+```sh {filename=Terminal}
 hugo mod get -u
 hugo mod tidy
 ```

@@ -10,7 +10,7 @@ weight: 2
 
 Values are assigned to variables in the following way.
 
-```tempo
+```tempo {filename=Tempo}
 let name: Type = value;
 ```
 
@@ -55,7 +55,7 @@ A type with a shared role, denoted `Type@[A,B,C]`, describes a value that at run
 A shared variable can be coerced to one of a subset of the roles, or even a single role.
 Constant literals are automatically shared between all roles and coerced to the subset needed.
 
-```tempo
+```tempo {filename=Tempo}
 let x: Bool@[A,B,C] = true
 let y: Bool[A,B] = x
 ```
@@ -63,7 +63,7 @@ let y: Bool[A,B] = x
 Shared variables is an alternative to traditional labels for determining [knowledge of choice](/docs/introduction/choreographic-programming/#knowledge-of-choice).
 Instead, when a choice is made, all participants of the choice will calculate it independently using shared variables.
 
-```tempo
+```tempo {filename=Tempo}
 let x: Int@[A,B] = 3;
 if x > 0 {
   // both A and B knows choice
@@ -75,7 +75,7 @@ This ensures that shared variables always agree on the same value across the rol
 
 Shared variables can be expanded by sending it to further participants transitively.
 
-```tempo
+```tempo {filename=Tempo}
 let x: Int@A = 42
 let y: Int@[A,B] = await A->B x
 let z: Int@[A,B,C] = await B->C y
@@ -93,7 +93,7 @@ You use the `await` expression to get the underlying value, which will wait unti
 
 Normal types can be coerced into asynchronous types that immediately return the result when await is used.
 
-```tempo
+```tempo {filename=Tempo}
 let x: async Bool@A = true;
 let y: Bool@A = await x; // value is already present
 let z: async Bool@A = 3 + x; // expression will be coerced to async

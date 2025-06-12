@@ -8,7 +8,7 @@ weight: 3
 
 Channels are built-in primitives. All roles can communicate with each other by writing `A->B x`, which reads _"role `A` sends the value `x` to role `B`"_.
 
-```tempo
+```tempo {filename=Tempo}
 // send value from `A` to `B`.
 let y@B = await A -> B "hello"@A;
 
@@ -21,7 +21,7 @@ When a value is communicated its roles are expanded to include the receiving rol
 
 The result is wrapped in an [`async`](/docs/language-guide/types-roles/#asynchronous-types) type, which allows the recipient(s) to defer waiting for the message to arrive until it is needed.
 
-```tempo
+```tempo {filename=Tempo}
 let x: Int@A = 10;
 
 // `A` sends the value to `B` immediately

@@ -8,7 +8,7 @@ weight: 4
 
 All choreographies start with a function defined over a set of roles.
 
-```tempo
+```tempo {filename=Tempo}
 func@(A,B,C) hello() {
   let hello: String@B = await A->B "Hello";
   let greeting: String@C = await B->C (hello + ", World!");
@@ -20,7 +20,7 @@ You instantiate a function by substituting its roles written `funcName@(A,B,C)`,
 All roles in a function substitution must be unique.
 When a function has been instantiated, you can call it like a regular function `funcName@(A,B,C)(arg1, arg2)`.
 
-```tempo
+```tempo {filename=Tempo}
 func@(Sender, Receiver) say(message: String@Sender) String@Receiver {
   return await Sender->Receiver message;
 }
@@ -39,7 +39,7 @@ A function can return, only if all roles of the function has knowledge about the
 
 You can pass around functions as closures after they have been instantiated.
 
-```tempo
+```tempo {filename=Tempo}
 func@(Sender, Receiver) say(message: String@Sender) String@Receiver {
   return await Sender->Receiver message;
 }
@@ -52,7 +52,7 @@ func@(A,B) main() {
 
 You can also capture variables with a closure like so.
 
-```tempo
+```tempo {filename=Tempo}
 func@(A,B) main() {
   let count: Int@A = 0;
   let counter: func@(A,B)()Int@B = func@(A,B) () Int@B {

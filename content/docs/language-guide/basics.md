@@ -10,7 +10,7 @@ weight: 1
 
 You write comments like so.
 
-```tempo
+```tempo {filename=Tempo}
 // this is a line comment
 
 /*

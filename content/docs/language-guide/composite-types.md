@@ -11,7 +11,7 @@ weight: 5
 Structures work similar to in regular programming languages, they compose multiple value into a single value.
 The main difference now is that different values can exist at different roles.
 
-```tempo
+```tempo {filename=Tempo}
 struct@(A,B) Pair {
   left: Int@A
   right: Int@B
@@ -22,13 +22,13 @@ struct@(A,B) Pair {
 
 Lists are written like this.
 
-```tempo
+```tempo {filename=Tempo}
 let x: [Int@[A,B]] = [1, 2, 3];
 ```
 
 You can combine lists using the `+` operator if they share the same underlying type and their roles intersect.
 
-```tempo
+```tempo {filename=Tempo}
 let x: [Int@[A,B]] = [1,2,3];
 let y: [Int@[B,C]] = [4,5,6];
 
@@ -38,7 +38,7 @@ let combined: [Int@B] = x + y;
 
 Similarly, you can index lists if the roles of the index intersect with the underlying type of the list.
 
-```tempo
+```tempo {filename=Tempo}
 let x: [String@[A,B]] = ["hello", "hi", "hey"];
 let i: Int@A = 1;
 
