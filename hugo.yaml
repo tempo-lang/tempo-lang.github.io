@@ -21,6 +21,9 @@ menu:
     - name: Documentation
       pageRef: /docs
       weight: 1
+    - name: Playground
+      pageRef: /playground
+      weight: 2
     - name: Search
       weight: 4
       params:

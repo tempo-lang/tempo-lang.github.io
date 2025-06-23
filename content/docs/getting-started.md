@@ -8,6 +8,12 @@ weight: 1
 
 Read how to get started with Tempo.
 
+## Playground
+
+The [Tempo Playground](/playground) is an online editor for Tempo.
+You can run some of the provided examples and simulate their execution, or modify the code to learn and experiment.
+The playground will highlight errors and show you the generated output code.
+
 ## Installation
 
 To install Tempo, you first need to have [Go](https://go.dev/) installed.
