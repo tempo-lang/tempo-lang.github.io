@@ -38,6 +38,9 @@ menu:
 enableGitInfo: true
 
 params:
+  page:
+    width: full
+
   navbar:
     displayTitle: true
     displayLogo: false
