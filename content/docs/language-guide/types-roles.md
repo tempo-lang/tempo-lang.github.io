@@ -98,3 +98,10 @@ let x: async Bool@A = true;
 let y: Bool@A = await x; // value is already present
 let z: async Bool@A = 3 + x; // expression will be coerced to async
 ```
+
+## Value Semantics
+
+Variables have pass-by-value semantics, which means that when a value is assigned to a new variable, the value is effectively copied to the new variable.
+This is the case for all values, including lists and structs which are often pass-by-reference in many common programming languages.
+
+The only exception is that a value which is captured by a closure references the same underlying value as the variable outside the scope of the closure.

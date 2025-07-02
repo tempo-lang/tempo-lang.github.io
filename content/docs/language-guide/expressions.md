@@ -37,3 +37,31 @@ let y: Int@[B,C,D] = 7;
 
 let sum: Int@[C,D] = x + y;
 ```
+
+## Other expressions
+
+- [Await async value](/docs/language-guide/types-roles/#asynchronous-types) `await x`
+- [Struct construction](/docs/language-guide/composite-types/#structures)
+- [Function calling](/docs/language-guide/functions) `myFunction()`
+- [List construction](/docs/language-guide/composite-types/#lists) `[1,2,3]`
+- [List indexing](/docs/language-guide/composite-types/#lists) `list[i]`
+- [Communication](/docs/language-guide/communication) `A->B value`
+
+### Closure construction
+
+See [closures](/docs/language-guide/functions#closures) for more details.
+
+```tempo {filename=Tempo}
+let x = func@(A,B) (input: Int@A) Int@B {
+  return await A->B input;
+};
+```
+
+### Field access
+
+Some types have fields that can be accessed as `value.field`.
+This includes:
+
+- Fields of [structures](/docs/language-guide/composite-types#structures)
+- Methods of [interfaces](/docs/projection/interact-with-host-language)
+- The `.length` field of [lists](/docs/language-guide/composite-types/#lists)
