@@ -13,8 +13,8 @@ The main difference now is that different values can exist at different roles.
 
 ```tempo {filename=Tempo}
 struct@(A,B) Pair {
-  left: Int@A,
-  right: Int@B
+  left: Int@A;
+  right: Int@B;
 }
 ```
 
@@ -24,7 +24,37 @@ The pair can now be instantiated like so.
 let pair = Pair@(A,B) {
   left: 10,
   right: 20
+};
+```
+
+### Methods
+
+Structures can have associated functions called methods.
+Expanding on the `Pair` structure from above, we add a `swap` method, that returns a new pair with the values swapped.
+
+```tempo {filename=Tempo}
+struct@(A,B) Pair {
+  left: Int@A;
+  right: Int@B;
+
+  func@(A,B) swap() Pair@(B,A) {
+    return Pair@(B,A) {
+      left: right,
+      right: left
+    };
+  }
 }
+```
+
+With this we can easily swap any pair by calling the method like so.
+
+```tempo {filename=Tempo}
+let pair = Pair@(A,B) {
+  left: 10,
+  right: 20
+};
+
+let swapped: Pair@(B,A) = pair.swap();
 ```
 
 ## Lists
