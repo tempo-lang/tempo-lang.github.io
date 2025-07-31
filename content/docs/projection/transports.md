@@ -80,4 +80,4 @@ func main() {
 ```
 
 The simulator returns a result object which contains every message exchanged between roles.
-This makes it easy to write unit tests, see the tests in the [`simulator` module](https://github.com/tempo-lang/tempo/tree/main/simulator).
+This makes it easy to write unit tests, see the tests in the [`examples` module](https://github.com/tempo-lang/tempo/tree/main/examples).

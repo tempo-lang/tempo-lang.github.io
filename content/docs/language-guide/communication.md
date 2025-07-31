@@ -10,10 +10,10 @@ Channels are built-in primitives. All roles can communicate with each other by w
 
 ```tempo {filename=Tempo}
 // send value from `A` to `B`.
-let y@B = await A -> B "hello"@A;
+let y: String@B = await A -> B "hello"@A;
 
 // send value from `A` to `B` and `C` to obtain a shared value.
-let y@[A,B,C] = await A->[B,C] "hi everyone"@A
+let y: String@[A,B,C] = await A->[B,C] "hi everyone"@A
 ```
 
 Only values with [local](/docs/language-guide/types-roles/#local-roles) or [shared](/docs/language-guide/types-roles/#shared-roles) roles can be communicated.
