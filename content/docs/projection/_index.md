@@ -1,7 +1,7 @@
 ---
 title: Projection
 type: docs
-prev: docs/language-guide/composite-types
+prev: docs/language-guide/interfaces
 next: docs/projection/interact-with-host-language
 weight: 4
 sidebar:

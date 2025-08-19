@@ -5,7 +5,7 @@ prev: docs/projection/transports
 weight: 2
 ---
 
-Functions from the host language can be called from Tempo through interfaces.
+Functions from the host language can be called from Tempo through [interfaces](/docs/language-guide/interfaces/).
 
 ```tempo {filename=hello.tempo}
 interface@A Printer {

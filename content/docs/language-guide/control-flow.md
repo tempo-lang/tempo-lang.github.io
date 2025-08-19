@@ -2,7 +2,7 @@
 title: Control Flow
 type: docs
 prev: docs/language-guide/composite-types
-next: docs/projection
+next: docs/language-guide/interfaces
 weight: 7
 ---
 
