@@ -6,6 +6,8 @@ next: docs/language-guide/expressions
 weight: 4
 ---
 
+## Declaring Functions
+
 All choreographies start with a function defined over a set of roles.
 
 ```tempo {filename=Tempo}
@@ -31,9 +33,26 @@ func@(A,B,C) hello() {
 }
 ```
 
-## Return
+### Return
 
 A function can return, only if all roles of the function has knowledge about the return statement.
+
+### Shared Functions
+
+If a function is [local](/docs/language-guide/types-roles/#local-roles), meaning that it exists only at a single role, then it can be instantiated as a _shared function_.
+A shared function takes [shared values](/docs/language-guide/types-roles/#shared-roles) as arguments and returns also a shared value.
+When a shared function is called, each role will make the same function call with the same values as arguments, which ensures that the return value is identical.
+
+```tempo {filename=Tempo}
+func@A double(value: Int@A) Int@A {
+  return value * 2;
+}
+
+func@(A,B) main() {
+  let x: Int@[A,B] = 10;
+  let y: Int@[A,B] = double@[A,B](x);
+}
+```
 
 ## Closures
 
