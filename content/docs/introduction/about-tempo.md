@@ -17,7 +17,7 @@ The compiler can project the same Tempo program into source code in different la
 This makes it possible to run different roles of a choreographic program in different environments.
 One role might run in a cloud environment using Go, while another role runs in a browser using JavaScript.
 
-Currently, the compiler can emit Go, TypeScript and JavaScript code, but more targets such as Swift and Java are planned to be added in the future.
+Currently, the compiler can emit Go, TypeScript/JavaScript and Java code, but more targets such as Swift and Rust are planned to be added in the future.
 
 ### Simple and practical
 

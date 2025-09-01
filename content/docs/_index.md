@@ -4,9 +4,6 @@ type: docs
 next: docs/getting-started
 ---
 
-- [Introduction](./introduction)\
-  Get an introduction to Tempo, and choreographic programming in general.
-
 - [Getting Started](./getting-started)\
   Learn how to install and run your first Tempo choreography.
 
