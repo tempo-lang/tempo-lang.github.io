@@ -37,17 +37,39 @@ func@(A,B,C) hello() {
 
 A function can return, only if all roles of the function has knowledge about the return statement.
 
-### Shared Functions
+### Local Functions
 
-If a function is [local](/docs/language-guide/types-roles/#local-roles), meaning that it exists only at a single role, then it can be instantiated as a _shared function_.
-A shared function takes [shared values](/docs/language-guide/types-roles/#shared-roles) as arguments and returns also a shared value.
-When a shared function is called, each role will make the same function call with the same values as arguments, which ensures that the return value is identical.
+A function is [local](/docs/language-guide/types-roles/#local-roles) if it exists only at a single role.
 
 ```tempo {filename=Tempo}
 func@A double(value: Int@A) Int@A {
   return value * 2;
 }
+```
 
+In the example above the function `double` only exists at the single role `A`.
+This means that its computations will only happen at a single process when executed,
+similar to regular functions in traditional programming languages.
+
+#### Unnamed Roles
+
+Local functions (as well as local [structures](/docs/language-guide/composite-types/#structures) and [interfaces](/docs/language-guide/interfaces/)) can have _unnamed roles_.
+To make a function with unnamed roles, you define it without specifying any explicit roles after the `func` keyword.
+This means that all types will automatically exist at a single unnamed role.
+
+```tempo {filename=Tempo}
+func double(value: Int) Int {
+  return value * 2;
+}
+```
+
+### Shared Functions
+
+Local functions can be instantiated as a _shared function_.
+A shared function takes [shared values](/docs/language-guide/types-roles/#shared-roles) as arguments and returns also a shared value.
+When a shared function is called, each role will make the same function call with the same values as arguments, which ensures that the return value is identical.
+
+```tempo {filename=Tempo}
 func@(A,B) main() {
   let x: Int@[A,B] = 10;
   let y: Int@[A,B] = double@[A,B](x);
