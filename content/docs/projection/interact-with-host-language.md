@@ -8,13 +8,13 @@ weight: 2
 Functions from the host language can be called from Tempo through [interfaces](/docs/language-guide/interfaces/).
 
 ```tempo {filename=hello.tempo}
-interface@A Printer {
-  func@A print(value: String@A);
+interface Printer {
+  func Print(value: String);
 }
 
-func@(A,B) hello(printA: Printer@A, printB: Printer@B) {
-  printA.print("Hello from A");
-  printB.print("Hello from B");
+func@(A,B) Hello(printA: Printer@A, printB: Printer@B) {
+  printA.Print("Hello from A");
+  printB.Print("Hello from B");
 }
 ```
 
@@ -38,9 +38,9 @@ import (
   "github.com/tempo-lang/tempo/simulator"
 )
 
-// define printer struct that implements the Printer@A interface
-type printer struct{}
-func (p *printer) print(env *runtime.Env, value string) {
+// define printer struct that implements the Printer interface
+type PrinterImpl struct{}
+func (p *PrinterImpl) Print(env *runtime.Env, value string) {
   fmt.Printf("%s\n", value)
 }
 
@@ -48,12 +48,12 @@ func main() {
   simulator.Run(
     simulator.Proc("A", func(env *runtime.Env) any {
       // provide printer implementation
-      hello_A(env, &printer{})
+      Hello_A(env, &PrinterImpl{})
       return nil
     }),
     simulator.Proc("B", func(env *runtime.Env) any {
       // provide printer implementation
-      hello_B(env, &printer{})
+      Hello_B(env, &PrinterImpl{})
       return nil
     }),
   )
