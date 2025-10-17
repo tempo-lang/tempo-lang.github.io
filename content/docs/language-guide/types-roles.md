@@ -105,3 +105,23 @@ Variables have pass-by-value semantics, which means that when a value is assigne
 This is the case for all values, including lists and structs which are often pass-by-reference in many common programming languages.
 
 The only exception is that a value which is captured by a closure references the same underlying value as the variable outside the scope of the closure.
+
+## Type Casting
+
+Some types can be explicitly casted to other types.
+For example, writing `String(10)` will cast the value `10` to a `String`.
+
+The following castings are supported:
+
+- `String(x)`, where `x` is of type `Int`, `Float`, `Bool`, or `String`.
+- `Float(x)`, where `x` is of type `Int` or `Float`.
+- `Int(x)`, where `x` is of type `Int` or `Float`.
+
+When casting a value, the new roles can optionally be specified like shown below.
+If no explicit roles are given, then the roles will be inferred to the same as those of the value being casted.
+
+```tempo {filename=Tempo}
+let x = 10@[A,B]; // x has type Int@[A,B]
+let y = String(x); // y has type String@[A,B]
+let z = String@A(x); // z has type String@A
+```

@@ -46,6 +46,7 @@ let sum: Int@[C,D] = x + y;
 - [List construction](/docs/language-guide/composite-types/#lists) `[1,2,3]`
 - [List indexing](/docs/language-guide/composite-types/#lists) `list[i]`
 - [Communication](/docs/language-guide/communication) `A->B value`
+- [Type Casting](/docs/language-guide/types-roles/#type-casting) `String(10)`
 
 ### Closure construction
 
