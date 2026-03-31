@@ -100,3 +100,34 @@ let i = 0@A; // index only exists at A
 pairs[i].left = 10; // ok, since .left exists at A
 pairs[i].right = 20; // error, since .right exists at B
 ```
+
+## Hiding roles in composite types
+
+Composite types like the `Pair` type defined earlier can hide some of its roles.
+This is done by denoting the hidden roles with an underscore `_`.
+In the example below, we construct a partial pair that only contains the `left` attribute at `A`.
+
+```tempo {filename=Tempo}
+let leftPair: Pair@(A,_) { left: 10 };
+```
+
+Doing so, means that the `right` attribute will not be accessible.
+
+```tempo {filename=Tempo}
+let right = leftPair.right; // error: right field is hidden
+```
+
+Composite types will automatically hide roles that are not in scope.
+This makes it possible to access parts of a larger structure in scopes where only a subset of the roles are present.
+
+```
+let pair = Pair@(A,B) { left: 10, right: 20 };
+let condition: Bool@A = localComputation@A();
+if condition {
+  print@A(pair.left);
+}
+```
+
+In the example above, we construct a distributed `Pair` at `A` and `B` and enter a conditional only at `A`.
+We can access `pair` in the conditional even though the `Pair` exists at both `A` and `B`.
+This is allowed since the type of `pair` will automatically be coerced to `Pair@(A,_)` (hiding `B`) when accessed inside the condition.

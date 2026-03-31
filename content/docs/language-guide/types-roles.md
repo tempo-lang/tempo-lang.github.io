@@ -73,7 +73,7 @@ if x > 0 {
 Shared variables can only be mutated by expressions that are of the same shared roles.
 This ensures that shared variables always agree on the same value across the roles.
 
-Shared variables can be expanded by sending it to further participants transitively.
+Shared variables can be expanded by sending it to further participants, even transitively.
 
 ```tempo {filename=Tempo}
 let x: Int@A = 42
